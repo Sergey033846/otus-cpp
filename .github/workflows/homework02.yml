@@ -20,12 +20,10 @@ jobs:
         working-directory: ./googletest
         run: |
           sudo cmake .
-          sudo cmake --build . --target install
-      - name: Boost install
-        run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+          sudo cmake --build . --target install      
       - name: Project build
         run: |
-          cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
+          cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_GTEST_TEST=ON
           cmake --build .
           cmake --build . --target test
           cmake --build . --target package
@@ -35,8 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          tag_name: ip_filter ${{ github.run_number }}
+          release_name: ip_filter Release ${{ github.run_number }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
