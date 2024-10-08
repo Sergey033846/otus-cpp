@@ -6,6 +6,9 @@
 #include <string>
 #include <cstring>
 
+/** \mainpage Main Page Text
+Some main page Text!!!
+*/
 
 /**
     @brief Partial specialization функции print_ip для целочисленного типа.
