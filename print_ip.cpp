@@ -6,6 +6,10 @@
 #include <string>
 #include <cstring>
 
+/** \mainpage SFINAE + Doxygen
+Реализация шаблонной функции print_ip для печати условного IP-адреса.
+Различные варианты входов реализованы через механизм SFINAE.
+*/
 
 /**
     @brief Partial specialization функции print_ip для целочисленного типа.
