@@ -15,12 +15,9 @@ jobs:
     - name: Install Doxygen
       run: sudo apt-get install doxygen graphviz
 
-    # Build the HTML documentation
-    - name: Doxygen Action
-      uses: mattnotmitt/doxygen-action@v1.1.0
-      with:
-          doxyfile-path: ./Doxyfile
-          working-directory: .
+    - name: Generate Doxygen Documentation
+      run: doxygen
+      shell: bash
     
     # Deploy the HTML documentation to GitHub Pages
     - name: GH Pages Deployment
